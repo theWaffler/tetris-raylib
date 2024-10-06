@@ -12,7 +12,6 @@ class Grid {
 
     ~Grid();  // destructor
     private:
-        std::vector<Color> GetCellColors();
         int numRows;
         int numCols;
         int celSize;
