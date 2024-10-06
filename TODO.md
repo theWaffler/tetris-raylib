@@ -2,7 +2,7 @@
 [x] Setup game loop
 [x] Create grid
 [x] Create blocks
-[ ] Move blocks
+[x] Move blocks
 [ ] Rotate blocks
 [ ] Collision detection
 [ ] Game Over

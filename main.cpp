@@ -1,26 +1,22 @@
 #include <raylib.h>
-#include "grid.h"
-#include "blocks.cpp"
+#include "game.h"
 
 int main() {
+    Game game = Game();
     Color darkBlue = {44, 44, 127, 255};  // built in struct
     const int winHeight = 600;
     const int winWidth = 300;
     // initialize window
-    InitWindow(winWidth, winHeight, "TETRIS");
+    InitWindow(winWidth, winHeight, "JUAN SUCKS <3");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
-    grid.Print();
-
-    TBlock block = TBlock();
-
+    // game loop
     while (WindowShouldClose() == false) {
-    BeginDrawing();
-    ClearBackground(darkBlue);
-    grid.Draw();
-    block.Draw();
-    EndDrawing();
+        game.HandleInput();
+        BeginDrawing();
+        ClearBackground(darkBlue);
+        game.Draw();
+        EndDrawing();
     }
 
     // close window
