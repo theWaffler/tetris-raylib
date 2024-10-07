@@ -45,3 +45,10 @@ void Block::Rotate() {
         rotationState = 0;
     }
 }
+
+void Block::UndoRotate() {
+    rotationState--;
+    if (rotationState == -1) {
+        rotationState = cells.size() - 1; 
+    }
+}

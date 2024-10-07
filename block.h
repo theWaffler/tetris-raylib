@@ -12,6 +12,7 @@ class Block {
         void Draw();
         void Move(int row, int column);
         void Rotate();
+        void UndoRotate();
         std::vector<Position> GetCellPosition();
         ~Block(); //destructor
 

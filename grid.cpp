@@ -50,3 +50,12 @@ bool Grid::IsCellOutside(int row, int column) {
         return true;
     }
 }
+
+bool Grid::IsCellOccupied(int row, int column) {
+    if (grid[row][column] == 0) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
