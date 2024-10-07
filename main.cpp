@@ -7,7 +7,7 @@ int main() {
     const int winHeight = 600;
     const int winWidth = 300;
     // initialize window
-    InitWindow(winWidth, winHeight, "JUAN SUCKS <3");
+    InitWindow(winWidth, winHeight, "TETRIS!");
     SetTargetFPS(60);
 
     // game loop

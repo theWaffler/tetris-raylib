@@ -3,7 +3,7 @@
 [x] Create grid
 [x] Create blocks
 [x] Move blocks
-[ ] Rotate blocks
+[x] Rotate blocks
 [ ] Collision detection
 [ ] Game Over
 [ ] UI
