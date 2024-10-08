@@ -13,7 +13,6 @@ Grid::Grid() {
 
 Grid::~Grid() {
   // destructor
-  std::cout << "Grid object destroyed" << std::endl;
 };
 
 void Grid::initialize() {
