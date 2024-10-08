@@ -8,9 +8,11 @@ class Game {
         ~Game();
         void Draw();
         void HandleInput();
-        void MoveBlockLeft();
-        void MoveBlockRight();
         void MoveBlockDown();
+        bool gameOver;
+        int score;
+        Music music;
+
 
     private:
         Grid grid;
@@ -23,7 +25,11 @@ class Game {
         bool IsCellOutside();
         void RotateBlock();
         void LockBlock();
+        void Reset();
+        void MoveBlockLeft();
+        void MoveBlockRight();
+        void UpdateScore(int LinesCleared, int moveDownPoints);
         bool BlockFits();
-
-
+        Sound rotateSound;
+        Sound clearSound;
 };

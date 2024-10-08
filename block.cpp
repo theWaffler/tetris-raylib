@@ -16,10 +16,10 @@ Block::~Block() {
     // do nothing
 }
 
-void Block::Draw() {
+void Block::Draw(int offsetX, int offsetY) {
     std::vector<Position> tiles = GetCellPosition();
     for (Position item: tiles) {
-        DrawRectangle(item.column * cellSize + 1, item.row * cellSize + 1, cellSize - 1, cellSize - 1, colors[id]);
+        DrawRectangle(item.column * cellSize + offsetX, item.row * cellSize + offsetY, cellSize - 1, cellSize - 1, colors[id]);
     }
 }
 
@@ -49,6 +49,6 @@ void Block::Rotate() {
 void Block::UndoRotate() {
     rotationState--;
     if (rotationState == -1) {
-        rotationState = cells.size() - 1; 
+        rotationState = cells.size() - 1;
     }
 }

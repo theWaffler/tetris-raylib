@@ -5,8 +5,8 @@
 [x] Move blocks
 [x] Rotate blocks
 [x] Collision detection
-[ ] Game Over
-[ ] UI
-[ ] Score
+[x] Game Over
+[x] UI
+[x] Score
 [ ] Add next block
 [ ] Add Sounds

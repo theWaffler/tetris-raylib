@@ -9,7 +9,7 @@ class Block {
         Block();
         int id;
         std::map<int, std::vector<Position>> cells;
-        void Draw();
+        void Draw(int offsetX, int offsetY);
         void Move(int row, int column);
         void Rotate();
         void UndoRotate();
