@@ -12,6 +12,7 @@ class Game {
         bool gameOver;
         int score;
         Music music;
+        bool AudioLoadedSuccessfully() const;
 
 
     private:

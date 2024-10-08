@@ -5,11 +5,11 @@ LDFLAGS = -s ALLOW_MEMORY_GROWTH=1
 
 # Raylib and project paths
 RAYLIB_PATH = /home/jay/workspace/raylib
-INCLUDE_FLAGS = -I$(RAYLIB_PATH)/src -I$(RAYLIB_PATH)/src/external
+INCLUDE_FLAGS = -I$(RAYLIB_PATH)/src -I$(RAYLIB_PATH)/src/external -I/home/jay/emsdk/upstream/emscripten/cache/sysroot/include
 LIBS = $(RAYLIB_PATH)/src/libraylib.a -lGL -lm -lpthread -ldl -lrt -lX11
 
 # Source files (modify this list if you have more files)
-SRC = block.cpp blocks.cpp color.cpp game.cpp grid.cpp main.cpp position.cpp
+SRC = main.cpp block.cpp blocks.cpp color.cpp game.cpp grid.cpp position.cpp
 
 # Output directory for Web build
 OUTPUT = web/index.html

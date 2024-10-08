@@ -10,12 +10,29 @@ Game::Game(){
     nextBlock = GetRandomBlock();
     gameOver = false;
     score = 0;
+
     InitAudioDevice();
-    music = LoadMusicStream("daft.wav");
-    PlayMusicStream(music);
-    SetMusicVolume(music, 0.5f);
-    rotateSound = LoadSound("rotate.mp3");
-    clearSound = LoadSound("clear.wav");
+    SetAudioStreamBufferSizeDefault(4096);  // Reduced buffer size for lower latency
+
+    // Load music
+    music = LoadMusicStream("daft.ogg");
+    if (music.frameCount == 0) {
+        TraceLog(LOG_ERROR, "Failed to load daft.ogg");
+    } else {
+        SetMusicVolume(music, 0.5f);
+        PlayMusicStream(music);
+
+        // Preload some audio data
+        for (int i = 0; i < 20; i++) {
+            UpdateMusicStream(music);
+        }
+    }
+
+    // Load sound effect
+    clearSound = LoadSound("clear.ogg");
+    if (clearSound.frameCount == 0) {
+        TraceLog(LOG_ERROR, "Failed to load clear.ogg");
+    }
 }
 
 Game::~Game() {
@@ -180,4 +197,10 @@ void Game::UpdateScore(int LinesCleared, int moveDownPoints) {
             break;
     }
     score += moveDownPoints;
+}
+
+bool Game::AudioLoadedSuccessfully() const {
+    return (music.frameCount != 0) &&
+           (rotateSound.frameCount != 0) &&
+           (clearSound.frameCount != 0);
 }
