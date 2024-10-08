@@ -96,24 +96,20 @@ void Game::RotateBlock() {
     }
 }
 
-void Game::LockBlock()
-{
+void Game::LockBlock() {
     std::vector<Position> tiles = currentBlock.GetCellPosition();
-    for (Position item : tiles)
-    {
+    for (Position item : tiles) {
         grid.grid[item.row][item.column] = currentBlock.id;
     }
     currentBlock = nextBlock;
     nextBlock = GetRandomBlock();
+    grid.ClearFullRows();
 }
 
-bool Game::BlockFits()
-{
+bool Game::BlockFits() {
     std::vector<Position> tiles = currentBlock.GetCellPosition();
-    for (Position item : tiles)
-    {
-        if (grid.IsCellEmpty(item.row, item.column) == false)
-        {
+    for (Position item : tiles) {
+        if (grid.IsCellEmpty(item.row, item.column) == false){
             return false;
         }
     }

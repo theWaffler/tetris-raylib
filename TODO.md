@@ -4,7 +4,7 @@
 [x] Create blocks
 [x] Move blocks
 [x] Rotate blocks
-[ ] Collision detection
+[x] Collision detection
 [ ] Game Over
 [ ] UI
 [ ] Score
