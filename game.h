@@ -6,9 +6,6 @@ class Game {
     public:
         Game();
         ~Game();
-        Grid grid;
-        Block GetRandomBlock();
-        std::vector<Block> GetAllBlocks();
         void Draw();
         void HandleInput();
         void MoveBlockLeft();
@@ -16,13 +13,17 @@ class Game {
         void MoveBlockDown();
 
     private:
+        Grid grid;
+        std::vector<Block> blocks;
+        Block currentBlock;
+        Block nextBlock;
+
+        Block GetRandomBlock();
+        std::vector<Block> GetAllBlocks();
         bool IsCellOutside();
         void RotateBlock();
         void LockBlock();
         bool BlockFits();
-        std::vector<Block> blocks;
-        Block currentBlock;
-        Block nextBlock;
 
 
 };
