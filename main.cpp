@@ -5,10 +5,12 @@ double lastUpdatedTime = 0.0;
 
 bool eventTriggered(double interval) {
     double currentTime = GetTime();
+
     if (currentTime - lastUpdatedTime >= interval) {
         lastUpdatedTime = currentTime;
         return true;
     }
+
     return false;
 }
 
